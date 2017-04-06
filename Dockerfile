@@ -14,7 +14,6 @@ RUN apt-get update && \
       stable" && \
     apt-get update && \
     apt-get install -y docker-ce=17.03.1~ce-0~debian-jessie && \
-    groupadd docker && \
     usermod -aG docker jenkins
     
 #RUN curl -L https://download.docker.com/linux/debian/dists/jessie/pool/stable/amd64/docker-ce_17.03.1\~ce-0\~debian-jessie_amd64.deb -o /tmp/docker-17-3-1.deb && \
