@@ -1,7 +1,8 @@
 FROM jenkins:2.46.1
 # install the docker CLI because we would like it to be used by Jenkins master
 USER root
-RUN apt-get install \
+RUN apt-get update && \
+    apt-get install -y \
       apt-transport-https \
       ca-certificates \
       curl \
@@ -12,7 +13,7 @@ RUN apt-get install \
       $(lsb_release -cs) \
       stable" && \
     apt-get update && \
-    apt-get install docker-ce=17.03.1~ce-0~debian-jessie && \
+    apt-get install -y docker-ce=17.03.1~ce-0~debian-jessie && \
     groupadd docker && \
     usermod -aG docker jenkins
     
